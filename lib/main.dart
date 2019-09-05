@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test_one/ui/home/home.dart';
+import 'package:flutter_test_one/ui/home/home_whats.dart';
 import 'package:flutter_test_one/ui/login/login.dart';
 
 void main() => runApp(MyApp());
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       home: LoginPage('Login'),
       routes: <String, WidgetBuilder> {
         'login': (BuildContext context) => LoginPage('Login'),
-        'home': (BuildContext context) => MyHomePage(title: 'Home')
+        'home': (BuildContext context) => MyWhatsappHomePage(title: 'Whatsapp')
       },
 //      MyHomePage(title: 'Flutter Demo Home Page'),
     );
