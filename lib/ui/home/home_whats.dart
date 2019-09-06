@@ -15,20 +15,26 @@ class _MyWhatsappHomePage extends State<MyWhatsappHomePage> {
 
   Widget getItemChatList() {
     return Container(
+      alignment: Alignment.center,
       padding: EdgeInsets.only(left: 8),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.end,
             children: <Widget>[
               Text('House Lannister - Everis',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 18),
               ),
-                Text('13:06'),
+              Text('13:06')
             ],
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.end,
             children: <Widget>[
               Text('+55 11 94970-9209:'),
               Text('Hello browww')
@@ -39,36 +45,37 @@ class _MyWhatsappHomePage extends State<MyWhatsappHomePage> {
     );
   }
 
-  List<Widget> getWidgetDataList() {
-    List<Widget> widgets = [];
-    for (int i = 0; i<= 10; i++) {
-      widgets.add(GestureDetector(
-        child: Container(
-          child: Row(
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: SizedBox(
-                  height: 50,
-                  width: 50,
-                  child:CircleAvatar(
-                    backgroundImage: NetworkImage('https://quickbirdstudios.com/blog/wp-content/uploads/2018/06/16FB8FD2-6D3E-4EFA-9062-2231CA34F196-550x208.png'),
-                  ) ,
-                ),
+  Widget getListItem() {
+    return
+      Row(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: SizedBox(
+                height: 50,
+                width: 50,
+                child:CircleAvatar(
+                  backgroundImage: NetworkImage('https://quickbirdstudios.com/blog/wp-content/uploads/2018/06/16FB8FD2-6D3E-4EFA-9062-2231CA34F196-550x208.png'),
+                ) ,
               ),
-              getItemChatList()
-            ],
-          )
-        ),
-      ));
-    }
-
-    return widgets;
+            ),
+            getItemChatList()
+          ],
+      );
   }
 
   Widget ChatListBuilder() {
     return Container(
+      alignment: Alignment.center,
       child: ListView.separated(
+        itemCount: 10,
+        separatorBuilder: (context, index) => Divider(
+          color: Colors.grey,
+        ),
+        itemBuilder: (context, index) => Container(
+          height: 80,
+          child: getListItem(),
+        ),
       ),
     );
   }
