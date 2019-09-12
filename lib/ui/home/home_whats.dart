@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -12,56 +11,54 @@ class MyWhatsappHomePage extends StatefulWidget {
 }
 
 class _MyWhatsappHomePage extends State<MyWhatsappHomePage> {
-
   Widget getItemChatList() {
-    return Container(
-      alignment: Alignment.center,
-      padding: EdgeInsets.only(left: 8),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.end,
+    return Expanded(
+      child: Container(
+          padding: EdgeInsets.only(left: 8, right: 8),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text('House Lannister - Everis',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 18),
-              ),
-              Text('13:06')
+              new Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text(
+                      'House Lannister - Everis',
+                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                    ),
+                    Text('13:06')
+                  ]),
+              Row(
+                children: <Widget>[
+                  Text('+55 11 94970-9209: '),
+                  Flexible(
+                    child: Text('Hello browww HJKSHAKSJHAJKSHAKJSHAKJSHAKJSHAKJSHAJKSHAKJSHA',
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 1,),
+                  )
+                ],
+              )
             ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: <Widget>[
-              Text('+55 11 94970-9209:'),
-              Text('Hello browww')
-            ],
-          )
-        ],
-      ),
+          )),
     );
   }
 
   Widget getListItem() {
-    return
-      Row(
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: SizedBox(
-                height: 50,
-                width: 50,
-                child:CircleAvatar(
-                  backgroundImage: NetworkImage('https://quickbirdstudios.com/blog/wp-content/uploads/2018/06/16FB8FD2-6D3E-4EFA-9062-2231CA34F196-550x208.png'),
-                ) ,
-              ),
+    return Row(
+      children: <Widget>[
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: SizedBox(
+            height: 50,
+            width: 50,
+            child: CircleAvatar(
+              backgroundImage: NetworkImage(
+                  'https://quickbirdstudios.com/blog/wp-content/uploads/2018/06/16FB8FD2-6D3E-4EFA-9062-2231CA34F196-550x208.png'),
             ),
-            getItemChatList()
-          ],
-      );
+          ),
+        ),
+        getItemChatList()
+      ],
+    );
   }
 
   Widget ChatListBuilder() {
@@ -90,9 +87,15 @@ class _MyWhatsappHomePage extends State<MyWhatsappHomePage> {
           backgroundColor: Colors.green,
           bottom: TabBar(
             tabs: <Widget>[
-              Tab(text: 'Conversas',),
-              Tab(text: 'Status',),
-              Tab(text: 'Chamadas',)
+              Tab(
+                text: 'Conversas',
+              ),
+              Tab(
+                text: 'Status',
+              ),
+              Tab(
+                text: 'Chamadas',
+              )
             ],
           ),
         ),
@@ -102,10 +105,11 @@ class _MyWhatsappHomePage extends State<MyWhatsappHomePage> {
             Icon(Icons.directions_transit),
             Icon(Icons.directions_bike),
           ],
-        ), floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: Icon(Icons.chat),
-      ),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          child: Icon(Icons.chat),
+        ),
       ),
     );
   }
