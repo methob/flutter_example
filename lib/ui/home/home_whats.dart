@@ -25,17 +25,20 @@ class _MyWhatsappHomePage extends State<MyWhatsappHomePage> {
                       'House Lannister - Everis',
                       style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                     ),
-                    Text('13:06')
+                    Text('13:06', style: TextStyle(fontSize: 12),)
                   ]),
-              Row(
-                children: <Widget>[
-                  Text('+55 11 94970-9209: '),
-                  Flexible(
-                    child: Text('Hello browww HJKSHAKSJHAJKSHAKJSHAKJSHAKJSHAKJSHAJKSHAKJSHA',
-                      overflow: TextOverflow.ellipsis,
-                      maxLines: 1,),
-                  )
-                ],
+              Padding(
+                padding: const EdgeInsets.only(top: 4),
+                child: Row(
+                  children: <Widget>[
+                    Text('+55 11 94970-9209: '),
+                    Flexible(
+                      child: Text('Hello browww sdsdsdsdsdsdsdsds',
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 1,),
+                    )
+                  ],
+                ),
               )
             ],
           )),
